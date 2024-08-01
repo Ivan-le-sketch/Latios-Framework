@@ -439,6 +439,15 @@ namespace Latios
                             IncrementCount();
                             return true;
                         }
+                        else
+                        {
+                            if (last.key.Equals(key))
+                            {
+                                if (replace)
+                                    candidate.value = value;
+                                return false;
+                            }
+                        }
                         if (m_buffer.Length == m_capacity)
                         {
                             ReallocUp(m_capacity * 2);
